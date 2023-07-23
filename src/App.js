@@ -1,13 +1,13 @@
 
 
-import Calculator1 from "./components/calculator1/calculator1.component";
+import Calculator2 from "./components/calculator2/calculator2.component";
 
 const App = () => {
 
 
   return(
     <div>
-     <Calculator1/>
+     <Calculator2/>
     </div>
 
   )
