@@ -2,7 +2,7 @@ import { database } from "../../utils/firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import "./sign-in.css";
 import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
+
 import { useNavigate } from "react-router-dom";
 
 //import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
@@ -20,12 +20,12 @@ const SignIn = () => {
         navigate("/home");
       })
       .catch((error) => {
-        switch (error.data) {
+        switch (error.code) {
           case "auth/email-already-in-use":
             alert("Cannot create user,email already in use");
             break;
-          case "auth/wrong-password":
-            alert("incorrect password for email");
+          case "auth/weak-password":
+            alert("Password should be at least 6 characters");
             break;
           case "auth/user-not-found":
             alert("no user associated with this email");
